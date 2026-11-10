@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>FlightAssist | Airline Management System</title>
+    <meta name="description" content="FlightAssist — Professional airline management software for operations control, commercial planning, and crew management. Trusted by aviation operators worldwide.">
+    <link rel="canonical" href="https://flightassist.com/">
+
+    <!-- Resolve the theme before first paint so dark-mode users never see a
+         white flash while the React bundle loads. Mirrors Header.jsx. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+          document.querySelector('meta[name="theme-color"]')
+            ?.setAttribute('content', theme === 'dark' ? '#060d18' : '#e0f2fe');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+    <meta name="theme-color" content="#e0f2fe">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlightAssist">
+    <meta property="og:title" content="FlightAssist | Airline Management System">
+    <meta property="og:description" content="A comprehensive commercial aviation platform for airlines, charter operators, and flight support companies. Manage schedules, dispatch, crew, and commercial planning in one system.">
+    <meta property="og:url" content="https://flightassist.com/">
+    <meta property="og:image" content="https://flightassist.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FlightAssist | Airline Management System">
+    <meta name="twitter:description" content="A comprehensive commercial aviation platform for airlines, charter operators, and flight support companies.">
+    <meta name="twitter:image" content="https://flightassist.com/assets/og-image.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/logo.png" type="image/png">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Operations Control - Real-time flight monitoring, dispatch CRM, and integrated movement messaging for complete operational control.">
+  <title>Operations Control | FlightAssist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="FlightAssist home">
+        <span class="logo-text">FlightAssist</span>
+        <img src="assets/logo.png?v=2" alt="FlightAssist" width="40" height="40">
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html#solutions" class="nav-link">Services &amp; Products</a>
+        <a href="index.html#platform" class="nav-link">Platform</a>
+        <a href="index.html#benefits" class="nav-link">Why FlightAssist</a>
+        <a href="index.html#contact" class="nav-link">Support</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="index.html#contact" class="btn btn-ghost btn-sm">Pay Invoice</a>
+        <a href="index.html#contact" class="btn btn-primary btn-sm">Request Demo</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="index.html#solutions">Services &amp; Products</a>
+      <a href="index.html#platform">Platform</a>
+      <a href="index.html#benefits">Why FlightAssist</a>
+      <a href="index.html#contact">Support</a>
+      <div class="mobile-nav-actions">
+        <a href="index.html#contact" class="btn btn-ghost">Pay Invoice</a>
+        <a href="index.html#contact" class="btn btn-primary">Request Demo</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero hero--service hero--simple">
+      <div class="container hero-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <a href="index.html#solutions">Services</a>
+          <span>/</span>
+          <span>Operations Control</span>
+        </nav>
+        
+        <h1 class="hero-title hero-title--dark">
+          Operations <span>Control</span>
+        </h1>
+        <p class="hero-description hero-description--dark">
+          Real-time flight monitoring, dispatch CRM, and integrated movement messaging. Keep your ops center in complete control around the clock with advanced aircraft management capabilities.
+        </p>
+      </div>
+    </section>
+
+    <!-- Feature 1: Aircraft Movement Control -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="feature-detail">
+          <div class="feature-detail-visual">
+            <img src="assets/images/operation center.jpg" alt="Aircraft Movement Control" loading="lazy">
+          </div>
+          <div class="feature-detail-content">
+            <span class="eyebrow">Core System</span>
+            <h2 class="section-title">Aircraft Movement Control</h2>
+            <p class="feature-intro">Maximizes on-time performance through optimization of aircraft utilization. Automatic re-allocation and optimization of individual aircraft in response to the updating of maintenance plans.</p>
+            
+            <ul class="feature-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Scrollable displays from six hours to one month for actual or projected operations</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Automatic update and problem resolution following user-updated or receipt of longer period SITA aircraft movement messages via SITATEX</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Automatically displays impending/actual aircraft restrictions and crew duty violations following input of schedule variations or receipt of delays messages</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Facilitates rapid rescheduling of aircraft and crews to resolve delays of minimize their cumulative effect and cost of the overall operation</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Over-ride facilities permit user to evaluate alternative problem solutions</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>System warns user of conflicting or illegal aircraft/crew selections in manual mode, but authorized user can still override if required</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 2: Aircraft Maintenance Schedule Planning -->
+    <section class="section section--light">
+      <div class="container">
+        <div class="feature-detail feature-detail--reverse">
+          <div class="feature-detail-content">
+            <span class="eyebrow">Integrated Planning</span>
+            <h2 class="section-title">Aircraft Maintenance Schedule Planning</h2>
+            <p class="feature-intro">A fully integrated sub-system of Operations Control that facilitates the construction of highly efficient single or multi-fleet aircraft maintenance plans based on any annual or seasonal schedules plan conforming with national and company regulations.</p>
+            
+            <ul class="feature-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Can incorporate commercial, operational and technical restrictions imposed on fleets or individual aircraft by registration letters or tail numbers</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Rapid generation of unlimited "what if" planning scenarios to achieve optimum aircraft utilization and minimize costs</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Automatically updates individual aircraft hours, cycles, checks and other technical restrictions facilitating daily aircraft assignment by registration letters or tail numbers to the flying program</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-detail-visual">
+            <img src="assets/images/commercial planning.jpg" alt="Aircraft Maintenance Schedule Planning" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 3: Aircraft Schedule Construction -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="feature-detail">
+          <div class="feature-detail-visual">
+            <img src="assets/images/crew managment.jpg" alt="Aircraft Schedule Construction" loading="lazy">
+          </div>
+          <div class="feature-detail-content">
+            <span class="eyebrow">Schedule Management</span>
+            <h2 class="section-title">Aircraft Schedule Construction</h2>
+            <p class="feature-intro">Provides coverage of all flight sectors of the schedule according to aircraft type requirements. Fully incorporates all planned aircraft maintenance events and User-defined planning limitations.</p>
+            
+            <ul class="feature-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Automatically allocates aircraft registration letters or tail numbers</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>Ability to link specific aircraft routes and has aircraft routes follow specific crew routes</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Benefits Overview -->
+    <section class="section section--light">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="eyebrow">Key Capabilities</span>
+          <h2 class="section-title">Complete Operational Control</h2>
+        </div>
+        <div class="overview-grid">
+          <div class="overview-item">
+            <div class="overview-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3>Real-Time Monitoring</h3>
+            <p>Track all aircraft movements and operations with live updates and automatic problem resolution.</p>
+          </div>
+          <div class="overview-item">
+            <div class="overview-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <h3>Optimized Scheduling</h3>
+            <p>Automated aircraft allocation and maintenance planning for maximum efficiency.</p>
+          </div>
+          <div class="overview-item">
+            <div class="overview-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3>Complete Integration</h3>
+            <p>Seamless connection with SITA, SITATEX, and all operational systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section--dark">
+      <div class="container">
+        <div class="cta-center">
+          <h2 class="section-title section-title--light">Ready to optimize your operations?</h2>
+          <p class="section-subtitle section-subtitle--light">
+            See how FlightAssist Operations Control can transform your airline's efficiency and performance.
+          </p>
+          <div class="cta-actions">
+            <a href="index.html#contact" class="btn btn-primary btn-lg">Request Demo</a>
+            <a href="index.html#contact" class="btn btn-secondary btn-lg">Contact Sales</a>
+          </div>
+          <a href="index.html#solutions" class="back-link">← Back to All Services</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-wrapper">
+            <span class="footer-logo-text">FlightAssist</span>
+            <img src="assets/logo.png?v=2" alt="FlightAssist" class="footer-logo" width="38" height="38">
+          </div>
+          <p>Professional airline management software for commercial aviation. Powering flight operations worldwide since 2010.</p>
+        </div>
+        <div>
+          <h3 class="footer-heading">Products</h3>
+          <ul class="footer-links">
+            <li><a href="operations-control.html">Operations Control</a></li>
+            <li><a href="index.html#solutions">Commercial Planning</a></li>
+            <li><a href="index.html#solutions">Crew Management</a></li>
+            <li><a href="index.html#platform">Mobile Apps</a></li>
+            <li><a href="index.html#platform">API &amp; Integrations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-links">
+            <li><a href="index.html#benefits">About Us</a></li>
+            <li><a href="index.html#contact">Careers</a></li>
+            <li><a href="index.html#contact">Press</a></li>
+            <li><a href="index.html#contact">Security</a></li>
+            <li><a href="index.html#contact">Compliance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Support</h3>
+          <ul class="footer-links">
+            <li><a href="index.html#contact">Help Center</a></li>
+            <li><a href="index.html#contact">Documentation</a></li>
+            <li><a href="index.html#contact">System Status</a></li>
+            <li><a href="index.html#contact">Pay Invoice</a></li>
+            <li><a href="index.html#contact">Contact Sales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 FlightAssist. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/three.r134.min.js"></script>
+  <script src="js/vanta.clouds.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
