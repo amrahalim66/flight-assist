@@ -9,4 +9,5 @@ export const ACTIVITY_ICON = {
   cancel: 'x-circle',
   seat: 'users',
   fleet: 'plane',
+  download: 'download',
 };

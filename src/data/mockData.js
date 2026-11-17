@@ -6,10 +6,10 @@
 // and overdue invoices always read as current, whenever the demo is opened.
 //
 // Two kinds of account sign in:
-//   super_admin   – the FlightAssist owner: platform ownership and control
-//                   (companies, subscriptions, revenue, modules, monitoring)
+//   super_admin   – "FlightAssist Admin", the platform owner: ownership and
+//                   control (companies, subscriptions, revenue, modules, monitoring)
 //   company_admin – an airline's own administrator: workspace management
-//                   (employees, aircraft, operations, modules, billing)
+//                   (employees, aircraft, operations, modules, billing, downloads)
 //
 // Pricing is per aircraft per month. Users are unlimited on every plan.
 //
@@ -40,7 +40,7 @@ export function hoursAgo(n) {
 // ─── Roles & accounts ───
 
 export const ROLES = {
-  super_admin: { key: 'super_admin', label: 'Super Admin', blurb: 'Platform ownership and control — every company, subscription and module' },
+  super_admin: { key: 'super_admin', label: 'FlightAssist Admin', blurb: 'Platform ownership and control — every company, subscription and module' },
   company_admin: { key: 'company_admin', label: 'Company Admin', blurb: 'Airline workspace management for one operator' },
 };
 

@@ -25,25 +25,28 @@ import Subscriptions from '../components/dashboard/Subscriptions';
 import Revenue from '../components/dashboard/Revenue';
 import PlatformModules from '../components/dashboard/PlatformModules';
 import Monitoring from '../components/dashboard/Monitoring';
+import PlatformDownloads from '../components/dashboard/PlatformDownloads';
 import Settings from '../components/dashboard/Settings';
 import Employees from '../components/dashboard/company/Employees';
 import Aircraft from '../components/dashboard/company/Aircraft';
 import Operations from '../components/dashboard/company/Operations';
 import CompanyModules from '../components/dashboard/company/CompanyModules';
 import Billing from '../components/dashboard/company/Billing';
+import Downloads from '../components/dashboard/company/Downloads';
 import CompanySettings from '../components/dashboard/company/CompanySettings';
 import PayDrawer from '../components/dashboard/company/PayDrawer';
 
 // Two consoles share one shell:
-//   Super Admin   – platform ownership and control (every company)
-//   Company Admin – airline workspace management (their own company), also
-//                   reachable by a Super Admin through "view as".
+//   FlightAssist Admin – platform ownership and control (every company)
+//   Company Admin      – airline workspace management (their own company), also
+//                        reachable by a FlightAssist Admin through "view as".
 const PLATFORM_VIEWS = [
   { key: 'companies', label: 'Companies', icon: 'grid' },
   { key: 'subscriptions', label: 'Subscriptions', icon: 'credit-card' },
   { key: 'revenue', label: 'Revenue', icon: 'trending-up' },
   { key: 'modules', label: 'Modules', icon: 'layers' },
   { key: 'monitoring', label: 'Monitoring', icon: 'activity' },
+  { key: 'downloads', label: 'Downloads', icon: 'download' },
 ];
 
 const COMPANY_VIEWS = [
@@ -52,6 +55,7 @@ const COMPANY_VIEWS = [
   { key: 'operations', label: 'Operations', icon: 'activity' },
   { key: 'modules', label: 'Modules', icon: 'layers' },
   { key: 'billing', label: 'Billing', icon: 'credit-card' },
+  { key: 'downloads', label: 'Downloads', icon: 'download' },
 ];
 
 const SETTINGS_VIEW = { key: 'settings', label: 'Settings', icon: 'settings' };
@@ -243,6 +247,23 @@ export default function Dashboard({ user, onSignOut, onNavigate }) {
       notify(`PDF export for ${inv.id} is not wired up in this demo.`, 'info');
     },
 
+    // ── Software packages (Downloads page). No file store behind the demo,
+    // so a download is recorded and acknowledged rather than served.
+    downloadPackage(cid, label, file, size) {
+      log('download', `${label} downloaded (${file}, ${size})`, cid);
+      notify(`Preparing ${file} (${size}). Your download will start shortly.`, 'info');
+    },
+    copyText(text, what) {
+      if (!navigator.clipboard?.writeText) {
+        notify('Clipboard is not available in this browser.', 'warning');
+        return;
+      }
+      navigator.clipboard.writeText(text).then(
+        () => notify(`${what} copied to clipboard.`),
+        () => notify(`Couldn’t copy the ${what.toLowerCase()}.`, 'warning'),
+      );
+    },
+
     // ── Employees (unlimited, not billed)
     addEmployee(cid, member) {
       const s = byCompany(cid);
@@ -309,12 +330,12 @@ export default function Dashboard({ user, onSignOut, onNavigate }) {
       notify(`${a.reg} is now ${statusLabel(status)}.`, status === 'aog' ? 'warning' : 'success');
     },
 
-    // ── Super admin: open a company's workspace
-    viewAs(cid) {
+    // ── FlightAssist Admin: open a company's workspace
+    viewAs(cid, view = COMPANY_VIEWS[0].key) {
       const s = byCompany(cid);
       if (!s) return;
       setViewAs(cid);
-      go(COMPANY_VIEWS[0].key);
+      go(view);
       notify(`Viewing ${s.customer}'s workspace.`, 'info');
     },
     exitViewAs() {
@@ -372,6 +393,8 @@ export default function Dashboard({ user, onSignOut, onNavigate }) {
         return <CompanyModules sub={companySub} actions={actions} />;
       case 'billing':
         return <Billing sub={companySub} invoices={companyInvoices} onPay={openPay} actions={actions} go={go} />;
+      case 'downloads':
+        return <Downloads sub={companySub} invoices={companyInvoices} onPay={openPay} actions={actions} go={go} />;
       case 'settings':
         return <CompanySettings sub={companySub} user={isSuper && workspaceAdmin ? workspaceAdmin : user} actions={actions} notify={notify} />;
       default:
@@ -389,6 +412,8 @@ export default function Dashboard({ user, onSignOut, onNavigate }) {
         return <PlatformModules subs={subs} notify={notify} />;
       case 'monitoring':
         return <Monitoring subs={subs} activity={activity} />;
+      case 'downloads':
+        return <PlatformDownloads subs={subs} actions={actions} />;
       case 'settings':
         return <Settings user={user} notify={notify} />;
       default:
@@ -406,7 +431,7 @@ export default function Dashboard({ user, onSignOut, onNavigate }) {
             <img src="./assets/logo.png" alt="" width="36" height="36" />
             <span>
               <strong>FlightAssist</strong>
-              <small>{companyId ? workspaceName : 'Super Admin'}</small>
+              <small>{companyId ? workspaceName : 'FlightAssist Admin'}</small>
             </span>
           </button>
           <button type="button" className="db-icon-btn db-icon-btn--onDark db-sidebar-close" onClick={() => setMenuOpen(false)} aria-label="Close menu">
@@ -490,7 +515,7 @@ export default function Dashboard({ user, onSignOut, onNavigate }) {
           </button>
 
           <div className="db-topbar-title">
-            <span className="db-crumb">{companyId ? workspaceName : 'Super Admin'}</span>
+            <span className="db-crumb">{companyId ? workspaceName : 'FlightAssist Admin'}</span>
             <Icon name="chevron-right" size={14} />
             <strong>{current.label}</strong>
           </div>

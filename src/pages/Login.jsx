@@ -171,7 +171,7 @@ export default function Login({ onNavigate, onSignedIn, notice }) {
               <Icon name="users" size={15} /> Demo accounts
               <Icon name="chevron-down" size={14} className="auth-demo-caret" />
             </summary>
-            <p className="auth-demo-hint">Super Admin: platform ownership and control. Company Admin: one airline’s workspace.</p>
+            <p className="auth-demo-hint">FlightAssist Admin: platform ownership and control. Company Admin: one airline’s workspace.</p>
             <ul>
               {MOCK_USERS.map((u) => (
                 <li key={u.id}>

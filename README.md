@@ -6,14 +6,14 @@ Marketing website and admin console for FlightAssist, an airline management syst
 
 - **Home**, **Operations Control**, **Commercial Planning**, **Pricing** (per-aircraft plans with a fleet calculator)
 - **Admin dashboard** (`#login`), using mock data:
-  - Super Admin: Companies, Subscriptions, Revenue, Modules, Monitoring
-  - Company Admin: Employees, Aircraft, Operations, Modules, Billing
+  - FlightAssist Admin: Companies, Subscriptions, Revenue, Modules, Monitoring, Downloads
+  - Company Admin: Employees, Aircraft, Operations, Modules, Billing, Downloads
 
 ### Demo accounts (mock data only)
 
 | Role | Username | Password |
 |---|---|---|
-| Super Admin | `superadmin` | `Super@2026` |
+| FlightAssist Admin | `superadmin` | `Super@2026` |
 | Company Admin (Nordwind) | `nordwind.admin` | `Nordwind@2026` |
 | Company Admin (SkyBridge) | `skybridge.admin` | `SkyBridge@2026` |
 
